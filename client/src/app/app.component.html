@@ -1,0 +1,9 @@
+<div>
+  <input #filename type="text">
+  <button (click)="onCreateFile(filename.value)"> Create File </button>
+  <button (click)="onGetFiles()"> Get Files </button>
+</div>
+<div *ngFor="let file of files" (click)="onConnect(file)">
+  {{file}}
+</div>
+<iframe #collaboraviewer name="collabora-online-viewer" [src]="safeUrl" style="width:90%;height:90%;position:absolute;"></iframe>
